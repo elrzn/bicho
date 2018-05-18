@@ -11,4 +11,5 @@
   :serial t
   :depends-on (#:alexandria)
   :components ((:file "package")
+               (:file "lexer")
                (:file "godo")))
