@@ -1,7 +1,3 @@
-;;;; lexer.lisp
-;;
-;;;; Copyright (c) 2018 Eric Lorenzana
-
 (in-package #:godo)
 
 (defparameter *illegal* "ILLEGAL")

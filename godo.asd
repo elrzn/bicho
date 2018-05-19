@@ -1,8 +1,3 @@
-;;;; godo.asd
-;;
-;;;; Copyright (c) 2018 Eric Lorenzana
-
-
 (asdf:defsystem #:godo
   :description "A programming language"
   :author "Eric Lorenzana"
