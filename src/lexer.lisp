@@ -46,16 +46,21 @@
                       :initform "")))
 
 (defun make-lexer (&key input)
+  "Create an instance of input."
   (declare (type (string input)))
   (let ((l (make-instance 'lexer :input input)))
     (read-character l)
     l))
 
+(defmethod out-of-bounds-p ((lexer lexer))
+  "Check whether we have exceeded reading the lexer's input."
+  (>= (lexer-read-position lexer)
+      (length (lexer-input lexer))))
+
 (defmethod read-character ((lexer lexer))
-  ;; Out of bounds?
+  "Consume the lexer's input, reading one character at a time."
   (setf (lexer-current-character lexer)
-        (if (>= (lexer-read-position lexer)
-                (length (lexer-input lexer)))
+        (if (out-of-bounds-p lexer)
             0
             (char (lexer-input lexer) (lexer-read-position lexer))))
   (setf (lexer-position lexer) (lexer-read-position lexer))
