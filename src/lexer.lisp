@@ -20,12 +20,16 @@
 (defclass token ()
   ((type :initarg :type
          :accessor token-type
-         :type :string
+         :type :string                  ; consider deftype
          :initform nil)
    (literal :initarg :literal
             :accessor token-literal
             :type :string
             :initform nil)))
+
+(defun make-token (&key type literal)
+  "Create a new token instance."
+  (make-instance 'token :type type :literal literal))
 
 (defclass lexer ()
   ((input :initarg :input
