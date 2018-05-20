@@ -1,4 +1,4 @@
-(in-package #:godo)
+(in-package #:bicho)
 
 (defparameter *illegal* "ILLEGAL")
 (defparameter *eof* "EOF")

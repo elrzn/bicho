@@ -1,4 +1,4 @@
-(asdf:defsystem #:godo
+(asdf:defsystem #:bicho
   :description "A programming language"
   :author "Eric Lorenzana"
   :license  "MIT"
@@ -8,4 +8,4 @@
   :components ((:module "src"
                 :components ((:file "package")
                              (:file "lexer")
-                             (:file "godo")))))
+                             (:file "bicho")))))

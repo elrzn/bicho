@@ -1,4 +1,4 @@
-# godo
+# bicho
 
 A programming language.
 

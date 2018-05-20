@@ -1,2 +1,2 @@
-(defpackage #:godo-test
+(defpackage #:bicho-test
   (:use #:cl #:prove))

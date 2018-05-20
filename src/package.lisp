@@ -1,2 +1,2 @@
-(defpackage #:godo
+(defpackage #:bicho
   (:use #:cl))

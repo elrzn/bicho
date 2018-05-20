@@ -1,1 +1,1 @@
-(in-package #:godo-test)
+(in-package #:bicho-test)
