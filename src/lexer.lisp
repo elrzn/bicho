@@ -50,7 +50,7 @@
                       :initform "")))
 
 (defun make-lexer (&key input)
-  "Create an instance of input."
+  "Create an instance of a lexer for the given input."
   (declare (type (string input)))
   (let ((l (make-instance 'lexer :input input)))
     (read-character l)
