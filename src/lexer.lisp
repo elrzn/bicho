@@ -1,21 +1,21 @@
 (in-package #:bicho)
 
-(defparameter *illegal* "ILLEGAL")
-(defparameter *eof* "EOF")
+(defparameter *token-illegal* "ILLEGAL")
+(defparameter *token-eof* "EOF")
 
-(defparameter *ident* "IDENT")
-(defparameter *int* "INT")
+(defparameter *token-ident* "IDENT")
+(defparameter *token-int* "INT")
 
-(defparameter *assign* ":")
-(defparameter *plus* "*")
+(defparameter *token-assign* ":")
+(defparameter *token-plus* "*")
 
-(defparameter *comma* ",")
-(defparameter *semicolon* ";")
+(defparameter *token-comma* ",")
+(defparameter *token-semicolon* ";")
 
-(defparameter *lparen* "(")
-(defparameter *rparen* ")")
-(defparameter *lbrace* "{")
-(defparameter *rbrace* "}")
+(defparameter *token-lparen* "(")
+(defparameter *token-rparen* ")")
+(defparameter *token-lbrace* "{")
+(defparameter *token-rbrace* "}")
 
 (defclass token ()
   ((type :initarg :type
