@@ -15,6 +15,7 @@
 
 (defparameter *token-assign* (token-type-operator ":"))
 (defparameter *token-plus* (token-type-operator "+"))
+(defparameter *token-minus* (token-type-operator "-"))
 
 (defparameter *token-comma* (token-type-delimiter ","))
 (defparameter *token-semicolon* (token-type-delimiter ";"))
