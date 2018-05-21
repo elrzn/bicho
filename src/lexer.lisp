@@ -73,8 +73,8 @@
 ;; WIP
 (defmethod next-token ((lexer lexer))
   (let* ((ch (lexer-current-character lexer))
-         (token (labels ((token-for-ch (type)
-                           (make-token :type type :literal ch)))
+         (token (flet ((token-for-ch (type)
+                         (make-token :type type :literal ch)))
                   (match ch
                     (":" (token-for-ch *token-assign*))
                     ("+" (token-for-ch *token-plus*))))))
