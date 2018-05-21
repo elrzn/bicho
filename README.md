@@ -4,6 +4,6 @@ A programming language.
 
 ## License
 
-MIT
+ISC
 
 Copyright (c) 2018 Eric Lorenzana

@@ -1,7 +1,7 @@
 (asdf:defsystem #:bicho-test
   :description "A programming language"
   :author "Eric Lorenzana"
-  :license  "MIT"
+  :license  "ISC"
   :version "0.0.1"
   :serial t
   :depends-on (#:bicho #:prove)
