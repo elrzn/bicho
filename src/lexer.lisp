@@ -15,7 +15,6 @@
 
 (defparameter *token-assign* (token-type-operator ":"))
 (defparameter *token-plus* (token-type-operator "+"))
-(defparameter *token-minus* (token-type-operator "-"))
 
 (defparameter *token-comma* (token-type-delimiter ","))
 (defparameter *token-semicolon* (token-type-delimiter ";"))
@@ -85,9 +84,17 @@
                           (make-token :type type
                                       :literal (string current-character))))
                    (match current-character
-                     (#\: (token-for-ch *token-assign*))
+                     (#\( (token-for-ch *token-lparen*))
+                     (#\) (token-for-ch *token-rparen*))
+                     (#\+ (token-for-ch *token-minus*))
                      (#\+ (token-for-ch *token-plus*))
-                     ;; TODO
+                     (#\, (token-for-ch *token-comma*))
+                     (#\: (token-for-ch *token-assign*))
+                     (#\; (token-for-ch *token-semicolon*))
+                     (#\{ (token-for-ch *token-lbrace*))
+                     (#\} (token-for-ch *token-rbrace*))
+                     (_ (token-for-ch *token-illegal*))
+                     ;; TODO handle EOF
                      ))))
       (read-character lexer)
       token)))
