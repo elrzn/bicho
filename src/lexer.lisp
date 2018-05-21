@@ -1,26 +1,33 @@
 (in-package #:bicho)
 
-(defparameter *token-illegal* "ILLEGAL")
-(defparameter *token-eof* "EOF")
+(defdata token-type
+  (token-type-literal string)
+  (token-type-operator string)
+  (token-type-delimiter string)
+  (token-type-keyword string)
+  (token-type-any string))
 
-(defparameter *token-ident* "IDENT")
-(defparameter *token-int* "INT")
+(defparameter *token-illegal* (token-type-any "ILLEGAL"))
+(defparameter *token-eof* (token-type-any "EOF"))
 
-(defparameter *token-assign* ":")
-(defparameter *token-plus* "*")
+(defparameter *token-ident* (token-type-literal "IDENT"))
+(defparameter *token-int* (token-type-literal "INT"))
 
-(defparameter *token-comma* ",")
-(defparameter *token-semicolon* ";")
+(defparameter *token-assign* (token-type-operator ":"))
+(defparameter *token-plus* (token-type-operator "+"))
 
-(defparameter *token-lparen* "(")
-(defparameter *token-rparen* ")")
-(defparameter *token-lbrace* "{")
-(defparameter *token-rbrace* "}")
+(defparameter *token-comma* (token-type-delimiter ","))
+(defparameter *token-semicolon* (token-type-delimiter ";"))
+
+(defparameter *token-lparen* (token-type-delimiter "("))
+(defparameter *token-rparen* (token-type-delimiter ")"))
+(defparameter *token-lbrace* (token-type-delimiter "{"))
+(defparameter *token-rbrace* (token-type-delimiter "}"))
 
 (defclass token ()
   ((type :initarg :type
          :accessor token-type
-         :type :string                  ; consider deftype
+         :type token-type
          :initform nil)
    (literal :initarg :literal
             :accessor token-literal
